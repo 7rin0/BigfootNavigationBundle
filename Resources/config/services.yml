@@ -53,7 +53,7 @@ services:
         arguments:
             - '@router'
         tags:
-            - { name: form.type, alias: bigfoot_link }
+            - { name: form.type }
 
     # Menu Type
     bigfoot_navigation.form.type.menu:
@@ -61,7 +61,7 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
         tags:
-            - { name: form.type, alias: bigfoot_menu }
+            - { name: form.type }
 
     # Menu Item Type
     bigfoot_navigation.form.type.menu_item:
@@ -71,7 +71,7 @@ services:
         calls:
             - [setRequest, ['@?request=']]
         tags:
-            - { name: form.type, alias: bigfoot_menu_item }
+            - { name: form.type }
 
     # Menu Item Parameter Type
     ## NPH : To fix : such a class doesn't exist.
@@ -80,13 +80,13 @@ services:
 #        arguments:
 #            - '@doctrine.orm.entity_manager'
 #        tags:
-#            - { name: form.type, alias: bigfoot_menu_item_parameter }
+#            - { name: form.type }
 
     # Menu Item Attribute Type
     bigfoot_navigation.form.type.menu_item_attribute:
         class: Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\Item\AttributeType
         tags:
-            - { name: form.type, alias: bigfoot_menu_item_attribute }
+            - { name: form.type }
 
     # Route Parameter Type
     bigfoot_navigation.form.type.route_parameter:
@@ -96,4 +96,4 @@ services:
             - '@router'
             - %locale%
         tags:
-            - { name: form.type, alias: bigfoot_route_parameter }
+            - { name: form.type }
