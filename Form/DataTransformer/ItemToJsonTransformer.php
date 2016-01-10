@@ -59,7 +59,7 @@ class ItemToJsonTransformer implements DataTransformerInterface
             if (!$firstLevel or !$item->getParent()) {
                 $itemArray = array(
                     'id'    => $item->getId(),
-                    'label' => $item->getName(),
+                    'label' => $item->getBlockPrefix(),
                 );
 
                 if (count($children = $item->getChildren()) > 0) {

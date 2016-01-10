@@ -132,11 +132,10 @@ class ItemType extends AbstractType
     }
 
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        // var_dump($resolver->getDefaultOptions());die();
         $resolver->setDefaults(
             array(
                 'data_class' => 'Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item',
@@ -147,7 +146,7 @@ class ItemType extends AbstractType
     /**
      * @return string
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'bigfoot_menu_item';
     }

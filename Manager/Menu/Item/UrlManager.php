@@ -117,7 +117,7 @@ class UrlManager
 
         foreach ($item->getParameters() as $itemParameter) {
             $routeParameter = $itemParameter->getParameter();
-            $parameterName  = $routeParameter->getName();
+            $parameterName  = $routeParameter->getBlockPrefix();
 
             if ($routeParameter->getType()) {
                 $repository     = $this->entityManager->getRepository($routeParameter->getType());
