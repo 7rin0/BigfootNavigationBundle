@@ -175,7 +175,7 @@ class Item
      */
     public function __toString()
     {
-        return $this->getBlockPrefix();
+        return $this->getName();
     }
 
     /**
@@ -206,7 +206,7 @@ class Item
      *
      * @return string
      */
-    public function getBlockPrefix()
+    public function getName()
     {
         return $this->name;
     }
@@ -569,10 +569,10 @@ class Item
 
         foreach ($this->attributes as $attribute) {
             if ($attribute->getType() == $type) {
-                if (!isset($toReturn[$attribute->getBlockPrefix()])) {
-                    $toReturn[$attribute->getBlockPrefix()] = array();
+                if (!isset($toReturn[$attribute->getName()])) {
+                    $toReturn[$attribute->getName()] = array();
                 }
-                $toReturn[$attribute->getBlockPrefix()][] = $attribute->getValue();
+                $toReturn[$attribute->getName()][] = $attribute->getValue();
             }
         }
 
@@ -585,7 +585,7 @@ class Item
      */
     public function getChildAttributeValueByName($name) {
         foreach ($this->attributes as $attribute) {
-            if ($attribute->getType() == Attribute::CHILD && $attribute->getBlockPrefix() == $name) {
+            if ($attribute->getType() == Attribute::CHILD && $attribute->getName() == $name) {
                 return $attribute->getValue();
             }
         }
@@ -600,7 +600,7 @@ class Item
      */
     public function attributeExist($name, $value) {
         foreach ($this->attributes as $attribute) {
-            if ($attribute->getBlockPrefix() == $name && $attribute->getValue() == $value) {
+            if ($attribute->getName() == $name && $attribute->getValue() == $value) {
                 return true;
             }
         }

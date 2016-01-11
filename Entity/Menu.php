@@ -82,7 +82,7 @@ class Menu
      */
     public function __toString()
     {
-        return $this->getBlockPrefix();
+        return $this->getName();
     }
 
     /**
@@ -113,7 +113,7 @@ class Menu
      *
      * @return string
      */
-    public function getBlockPrefix()
+    public function getName()
     {
         return $this->name;
     }

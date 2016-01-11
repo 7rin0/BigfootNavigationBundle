@@ -27,7 +27,7 @@ class ItemController extends CrudController
     /**
      * @return string
      */
-    protected function getBlockPrefix()
+    protected function getName()
     {
         return 'bigfoot_menu_item';
     }
@@ -155,7 +155,7 @@ class ItemController extends CrudController
 
         $content = array(
             'itemId'   => $item->getId(),
-            'itemName' => $item->getBlockPrefix(),
+            'itemName' => $item->getName(),
             'parent'   => ($item->getParent()) ? $item->getParent()->getId() : null,
             'view'     => $itemView
         );

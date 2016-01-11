@@ -21,7 +21,7 @@ class AttributeController extends CrudController
     /**
      * @return string
      */
-    protected function getBlockPrefix()
+    protected function getName()
     {
         return 'bigfoot_menu_item_attribute';
     }

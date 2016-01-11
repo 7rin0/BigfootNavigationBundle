@@ -72,7 +72,7 @@ class LinkType extends AbstractType
                 $parentForm   = $event->getForm()->getParent();
                 $data         = $event->getData();
                 $parentData   = $form->getParent()->getData();
-                $getMethod    = 'get'.ucfirst($form->getBlockPrefix());
+                $getMethod    = 'get'.ucfirst($form->getName());
                 $entityLink   = ($data) ? $parentData->$getMethod() : null;
                 $name         = (isset($entityLink['name'])) ? $entityLink['name'] : null;
                 $externalLink = (isset($entityLink['externalLink'])) ? $entityLink['externalLink'] : null;
@@ -88,7 +88,7 @@ class LinkType extends AbstractType
                         'required'    => false,
                         'attr'        => array(
                             'class'                 => 'bigfoot_link_routes',
-                            'data-parent-form-link' => $parentForm->getBlockPrefix(),
+                            'data-parent-form-link' => $parentForm->getName(),
                         )
                     )
                 );
@@ -122,7 +122,7 @@ class LinkType extends AbstractType
                 $form       = $event->getForm();
                 $data       = $event->getData();
                 $parentData = $form->getParent()->getData();
-                $setMethod  = 'set'.ucfirst($form->getBlockPrefix());
+                $setMethod  = 'set'.ucfirst($form->getName());
 
                 $parentData->$setMethod($data);
 
@@ -135,7 +135,7 @@ class LinkType extends AbstractType
     /**
      * @return string
      */
-    public function getBlockPrefix()
+    public function getName()
     {
         return 'bigfoot_link';
     }

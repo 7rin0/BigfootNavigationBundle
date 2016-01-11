@@ -191,7 +191,7 @@ class Attribute
      *
      * @return string
      */
-    public function getBlockPrefix()
+    public function getName()
     {
         return $this->name;
     }
