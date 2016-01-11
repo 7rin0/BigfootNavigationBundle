@@ -655,7 +655,6 @@ class Item
         return $this->image;
     }
 
-
     /**
      * Set created
      *
