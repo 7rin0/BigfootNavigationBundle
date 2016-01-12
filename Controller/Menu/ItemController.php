@@ -2,19 +2,13 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Controller\Menu;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
-
 use Bigfoot\Bundle\CoreBundle\Controller\CrudController;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Parameter as ItemParameter;
-use Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\ItemType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Item Controller
@@ -76,7 +70,7 @@ class ItemController extends CrudController
      */
     public function indexAction(RequestStack $requestStack)
     {
-        return $this->doIndex($requestStack);
+        return $this->doIndex($requestStack->getCurrentRequest());
     }
 
     /**
@@ -86,7 +80,7 @@ class ItemController extends CrudController
      */
     public function newAction(RequestStack $requestStack)
     {
-        return $this->doNew($requestStack);
+        return $this->doNew($requestStack->getCurrentRequest());
     }
 
     /**
@@ -96,7 +90,7 @@ class ItemController extends CrudController
      */
     public function editAction(RequestStack $requestStack, $id)
     {
-        return $this->doEdit($requestStack, $id);
+        return $this->doEdit($requestStack->getCurrentRequest(), $id);
     }
 
     /**
@@ -107,6 +101,7 @@ class ItemController extends CrudController
     public function editItemTreePositionAction(RequestStack $requestStack, $id, $parent, $position)
     {
         $item = $this->getRepository($this->getEntity())->find($id);
+        $requestStack = $requestStack->getCurrentRequest();
 
         if (!$item) {
             return new JsonResponse(sprintf('Unable to find %s entity.', $this->getEntity()));
@@ -136,7 +131,7 @@ class ItemController extends CrudController
      */
     public function deleteAction(RequestStack $requestStack, $id)
     {
-        return $this->doDelete($requestStack, $id);
+        return $this->doDelete($requestStack->getCurrentRequest(), $id);
     }
 
     /**

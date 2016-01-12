@@ -2,15 +2,10 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\Item;
 
+use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityRepository;
-
-use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 
 class AttributeType extends AbstractType
 {

@@ -2,19 +2,16 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Twig\Extension;
 
-use Knp\Menu\ItemInterface;
-use Symfony\Component\Routing\RouterInterface;
-use Doctrine\ORM\EntityManager;
-use Twig_Extension;
-use Twig_SimpleFunction;
-use Knp\Menu\Twig\Helper;
-use Knp\Menu\Matcher\Matcher;
-use Knp\Menu\Iterator\RecursiveItemIterator;
-use Knp\Menu\Iterator\CurrentItemFilterIterator;
-use Knp\Menu\Util\MenuManipulator;
-
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 use Bigfoot\Bundle\NavigationBundle\Manager\Menu\Item\UrlManager;
+use Knp\Menu\ItemInterface;
+use Knp\Menu\Iterator\CurrentItemFilterIterator;
+use Knp\Menu\Iterator\RecursiveItemIterator;
+use Knp\Menu\Matcher\Matcher;
+use Knp\Menu\Twig\Helper;
+use Knp\Menu\Util\MenuManipulator;
+use Twig_Extension;
+use Twig_SimpleFunction;
 
 /**
  * MenuExtension

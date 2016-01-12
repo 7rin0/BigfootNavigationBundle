@@ -2,12 +2,11 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
+use Bigfoot\Bundle\NavigationBundle\Form\DataTransformer\ItemToJsonTransformer;
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Doctrine\ORM\EntityManager;
-
-use Bigfoot\Bundle\NavigationBundle\Form\DataTransformer\ItemToJsonTransformer;
 
 /**
  * Menu Type

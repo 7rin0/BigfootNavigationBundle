@@ -2,17 +2,16 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu;
 
+use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\AttributeRepository;
-use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Doctrine\ORM\EntityManager;
-use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 
 class ItemType extends AbstractType
 {

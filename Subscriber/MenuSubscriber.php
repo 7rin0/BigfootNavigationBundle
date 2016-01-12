@@ -2,11 +2,10 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Subscriber;
 
-use Symfony\Component\EventDispatcher\GenericEvent;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
-
 use Bigfoot\Bundle\CoreBundle\Event\MenuEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\GenericEvent;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 /**
  * Menu Subscriber

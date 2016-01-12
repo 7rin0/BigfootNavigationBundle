@@ -2,14 +2,11 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Route;
 
+use BeSimple\I18nRoutingBundle\Routing\Router;
 use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use BeSimple\I18nRoutingBundle\Routing\Router;
 
 class ParameterType extends AbstractType
 {

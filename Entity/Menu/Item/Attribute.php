@@ -2,11 +2,10 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 
+use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-
-use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 
 /**
  * Attribute

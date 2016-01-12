@@ -2,17 +2,16 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Entity\Menu;
 
+use Bigfoot\Bundle\CoreBundle\Annotation\Bigfoot;
+use Bigfoot\Bundle\NavigationBundle\Entity\Menu;
+use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
+use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Parameter;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Translation\ItemTranslation;
-use Symfony\Component\Validator\Constraints as Assert;
+use Bigfoot\Bundle\NavigationBundle\Entity\Route;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-
-use Bigfoot\Bundle\CoreBundle\Annotation\Bigfoot;
-use Bigfoot\Bundle\NavigationBundle\Entity\Menu;
-use Bigfoot\Bundle\NavigationBundle\Entity\Route;
-use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
-use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Parameter;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Item

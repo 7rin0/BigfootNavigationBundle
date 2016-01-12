@@ -2,14 +2,12 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\DataFixtures\ORM;
 
-use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Translation\AttributeTranslation;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Doctrine\Common\DataFixtures\AbstractFixture;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Doctrine\Common\Persistence\ObjectManager;
-
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute as Attribute;
+use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Translation\AttributeTranslation;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class LoadMenuItemAttributeData extends AbstractFixture implements ContainerAwareInterface
 {

@@ -2,11 +2,10 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\DataTransformer;
 
-use Symfony\Component\Form\DataTransformerInterface;
+use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManager;
-
-use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
+use Symfony\Component\Form\DataTransformerInterface;
 
 class ItemToJsonTransformer implements DataTransformerInterface
 {

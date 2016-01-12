@@ -2,11 +2,9 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Twig\Extension;
 
-use Symfony\Component\Routing\RouterInterface;
-use Twig_Extension;
-
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 use Bigfoot\Bundle\NavigationBundle\Manager\Menu\Item\UrlManager;
+use Twig_Extension;
 
 /**
  * LinkExtension

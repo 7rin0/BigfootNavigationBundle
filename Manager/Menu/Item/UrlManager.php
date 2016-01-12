@@ -2,12 +2,11 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Manager\Menu\Item;
 
-use Symfony\Component\Routing\RouterInterface;
-use Doctrine\ORM\EntityManager;
-
+use Bigfoot\Bundle\ContextBundle\Service\ContextService as Context;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Parameter;
-use Bigfoot\Bundle\ContextBundle\Service\ContextService as Context;
+use Doctrine\ORM\EntityManager;
+use Symfony\Component\Routing\RouterInterface;
 
 class UrlManager
 {

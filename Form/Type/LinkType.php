@@ -2,16 +2,12 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
-use Symfony\Component\HttpFoundation\Request;
+use BeSimple\I18nRoutingBundle\Routing\Router;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityRepository;
-use BeSimple\I18nRoutingBundle\Routing\Router;
+use Symfony\Component\Form\FormInterface;
 
 class LinkType extends AbstractType
 {
