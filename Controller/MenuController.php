@@ -65,7 +65,7 @@ class MenuController extends CrudController
      */
     public function indexAction(RequestStack $requestStack)
     {
-        return $this->doIndex($request);
+        return $this->doIndex($requestStack);
     }
 
     /**
@@ -75,7 +75,7 @@ class MenuController extends CrudController
      */
     public function newAction(RequestStack $requestStack)
     {
-        return $this->doNew($request);
+        return $this->doNew($requestStack);
     }
 
     /**
@@ -85,7 +85,7 @@ class MenuController extends CrudController
      */
     public function editAction(RequestStack $requestStack, $id)
     {
-        return $this->doEdit($request, $id);
+        return $this->doEdit($requestStack, $id);
     }
 
     /**
@@ -95,7 +95,7 @@ class MenuController extends CrudController
      */
     public function deleteAction(RequestStack $requestStack, $id)
     {
-        return $this->doDelete($request, $id);
+        return $this->doDelete($requestStack, $id);
     }
 
     /**
