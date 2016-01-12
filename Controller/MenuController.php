@@ -60,10 +60,10 @@ class MenuController extends CrudController
      * Lists Menu entities.
      *
      * @Route("/", name="bigfoot_menu")
-     * @param Request $request
+     * @param RequestStack $requestStack
      * @return array
      */
-    public function indexAction(Request $request)
+    public function indexAction(RequestStack $requestStack)
     {
         return $this->doIndex($request);
     }
@@ -73,7 +73,7 @@ class MenuController extends CrudController
      *
      * @Route("/new", name="bigfoot_menu_new")
      */
-    public function newAction(Request $request)
+    public function newAction(RequestStack $requestStack)
     {
         return $this->doNew($request);
     }
@@ -83,7 +83,7 @@ class MenuController extends CrudController
      *
      * @Route("/edit/{id}", name="bigfoot_menu_edit")
      */
-    public function editAction(Request $request, $id)
+    public function editAction(RequestStack $requestStack, $id)
     {
         return $this->doEdit($request, $id);
     }
@@ -93,7 +93,7 @@ class MenuController extends CrudController
      *
      * @Route("/delete/{id}", name="bigfoot_menu_delete")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction(RequestStack $requestStack, $id)
     {
         return $this->doDelete($request, $id);
     }

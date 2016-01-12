@@ -27,7 +27,7 @@ class ParameterController extends BaseController
      * @Route("/list/{route}/{formName}", name="bigfoot_route_parameter_list", options={"expose"=true})
      * @Template()
      */
-    public function listAction(Request $request, $route, $formName)
+    public function listAction(RequestStack $requestStack, $route, $formName)
     {
         $entityForm = $this->createForm($formName);
 

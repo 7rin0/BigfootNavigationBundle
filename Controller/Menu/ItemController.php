@@ -71,10 +71,10 @@ class ItemController extends CrudController
      * 'List's Item entities.
      *
      * @Route("/", name="bigfoot_menu_item")
-     * @param Request $request
+     * @param RequestStack $requestStack
      * @return array
      */
-    public function indexAction(Request $request)
+    public function indexAction(RequestStack $requestStack)
     {
         return $this->doIndex($request);
     }
@@ -84,7 +84,7 @@ class ItemController extends CrudController
      *
      * @Route("/new", name="bigfoot_menu_item_new", options={"expose"=true})
      */
-    public function newAction(Request $request)
+    public function newAction(RequestStack $requestStack)
     {
         return $this->doNew($request);
     }
@@ -94,7 +94,7 @@ class ItemController extends CrudController
      *
      * @Route("/edit/{id}", name="bigfoot_menu_item_edit")
      */
-    public function editAction(Request $request, $id)
+    public function editAction(RequestStack $requestStack, $id)
     {
         return $this->doEdit($request, $id);
     }
@@ -104,7 +104,7 @@ class ItemController extends CrudController
      *
      * @Route("/edit-item-tree-position/{id}/{parent}/{position}", name="bigfoot_menu_item_edit_tree_position", options={"expose"=true})
      */
-    public function editItemTreePositionAction(Request $request, $id, $parent, $position)
+    public function editItemTreePositionAction(RequestStack $requestStack, $id, $parent, $position)
     {
         $item = $this->getRepository($this->getEntity())->find($id);
 
@@ -134,7 +134,7 @@ class ItemController extends CrudController
      *
      * @Route("/delete/{id}", name="bigfoot_menu_item_delete", options={"expose"=true})
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction(RequestStack $requestStack, $id)
     {
         return $this->doDelete($request, $id);
     }

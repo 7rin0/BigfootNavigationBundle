@@ -55,10 +55,10 @@ class AttributeController extends CrudController
      * Lists Attribute entities.
      *
      * @Route("/", name="bigfoot_menu_item_attribute")
-     * @param Request $request
+     * @param RequestStack $requestStack
      * @return array
      */
-    public function indexAction(Request $request)
+    public function indexAction(RequestStack $requestStack)
     {
         return $this->doIndex($request);
     }
@@ -68,7 +68,7 @@ class AttributeController extends CrudController
      *
      * @Route("/new", name="bigfoot_menu_item_attribute_new")
      */
-    public function newAction(Request $request)
+    public function newAction(RequestStack $requestStack)
     {
         return $this->doNew($request);
     }
@@ -78,7 +78,7 @@ class AttributeController extends CrudController
      *
      * @Route("/edit/{id}", name="bigfoot_menu_item_attribute_edit")
      */
-    public function editAction(Request $request, $id)
+    public function editAction(RequestStack $requestStack, $id)
     {
         return $this->doEdit($request, $id);
     }
@@ -88,7 +88,7 @@ class AttributeController extends CrudController
      *
      * @Route("/delete/{id}", name="bigfoot_menu_item_attribute_delete")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction(RequestStack $requestStack, $id)
     {
         return $this->doDelete($request, $id);
     }

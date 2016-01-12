@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\ORM\EntityManager;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
@@ -23,7 +24,7 @@ class ItemType extends AbstractType
     /**
      * @var Request
      */
-    protected $request;
+    protected $requestStack;
 
     /**
      * Construct Item Type
@@ -35,9 +36,9 @@ class ItemType extends AbstractType
         $this->entityManager = $entityManager;
     }
 
-    public function setRequest(Request $request = null)
+    public function setRequestStack(RequestStack $requestStack = null)
     {
-        $this->request = $request;
+        $this->requestStack = $requestStack->getCurrentRequest();
     }
 
     /**
@@ -47,9 +48,9 @@ class ItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $entityManager = $this->entityManager;
-        $modal         = ($this->request->query->get('layout') == '_modal') ? true : false;
-        $referer       = $this->request->headers->get('referer');
-        $parent        = $this->request->query->get('parent');
+        $modal         = ($this->requestStack->query->get('layout') == '_modal') ? true : false;
+        $referer       = $this->requestStack->headers->get('referer');
+        $parent        = $this->requestStack->query->get('parent');
         $menuId        = substr($referer, (strrpos($referer, '/') + 1));
         $menu          = false;
 
