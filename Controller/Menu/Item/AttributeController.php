@@ -5,7 +5,6 @@ namespace Bigfoot\Bundle\NavigationBundle\Controller\Menu\Item;
 use Bigfoot\Bundle\CoreBundle\Controller\CrudController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Attribute controller.
