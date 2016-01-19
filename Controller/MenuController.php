@@ -82,7 +82,7 @@ class MenuController extends CrudController
      */
     public function editAction($id)
     {
-        return $this->doEdit($requestStack->getCurrentRequest(), $id);
+        return $this->doEdit($id);
     }
 
     /**
@@ -92,7 +92,7 @@ class MenuController extends CrudController
      */
     public function deleteAction($id)
     {
-        return $this->doDelete($requestStack->getCurrentRequest(), $id);
+        return $this->doDelete($id);
     }
 
     /**
