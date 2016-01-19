@@ -3,7 +3,7 @@
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
 use BeSimple\I18nRoutingBundle\Routing\Router;
-use Doctrine\DBAL\Types\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
