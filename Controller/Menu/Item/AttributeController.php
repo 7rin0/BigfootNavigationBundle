@@ -52,12 +52,12 @@ class AttributeController extends CrudController
      * Lists Attribute entities.
      *
      * @Route("/", name="bigfoot_menu_item_attribute")
-     * @param RequestStack $requestStack
+     * @param 
      * @return array
      */
-    public function indexAction(RequestStack $requestStack)
+    public function indexAction()
     {
-        return $this->doIndex($requestStack->getCurrentRequest());
+        return $this->doIndex($this->getRequestStack());
     }
 
     /**
@@ -65,9 +65,9 @@ class AttributeController extends CrudController
      *
      * @Route("/new", name="bigfoot_menu_item_attribute_new")
      */
-    public function newAction(RequestStack $requestStack)
+    public function newAction()
     {
-        return $this->doNew($requestStack->getCurrentRequest());
+        return $this->doNew($this->getRequestStack());
     }
 
     /**
@@ -75,9 +75,9 @@ class AttributeController extends CrudController
      *
      * @Route("/edit/{id}", name="bigfoot_menu_item_attribute_edit")
      */
-    public function editAction(RequestStack $requestStack, $id)
+    public function editAction($id)
     {
-        return $this->doEdit($requestStack->getCurrentRequest(), $id);
+        return $this->doEdit($this->getRequestStack(), $id);
     }
 
     /**
@@ -85,8 +85,8 @@ class AttributeController extends CrudController
      *
      * @Route("/delete/{id}", name="bigfoot_menu_item_attribute_delete")
      */
-    public function deleteAction(RequestStack $requestStack, $id)
+    public function deleteAction($id)
     {
-        return $this->doDelete($requestStack->getCurrentRequest(), $id);
+        return $this->doDelete($this->getRequestStack(), $id);
     }
 }
