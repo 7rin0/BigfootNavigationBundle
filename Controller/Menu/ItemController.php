@@ -101,7 +101,7 @@ class ItemController extends CrudController
     public function editItemTreePositionAction($id, $parent, $position)
     {
         $item = $this->getRepository($this->getEntity())->find($id);
-        $requestStack = $requestStack->getCurrentRequest();
+        $requestStack = $this->getRequestStack();
 
         if (!$item) {
             return new JsonResponse(sprintf('Unable to find %s entity.', $this->getEntity()));
