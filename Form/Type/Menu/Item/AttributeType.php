@@ -3,6 +3,7 @@
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\Item;
 
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
+use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -27,9 +28,9 @@ class AttributeType extends AbstractType
                     'required'    => true,
                 )
             )
-            ->add('name', 'text', array('required' => false))
-            ->add('value', 'text', array('required' => false))
-            ->add('label', 'text', array('required' => false))
+            ->add('name', TextType::class, array('required' => false))
+            ->add('value', TextType::class, array('required' => false))
+            ->add('label', TextType::class, array('required' => false))
             ->add('translation', 'translatable_entity');
     }
 

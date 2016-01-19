@@ -3,6 +3,7 @@
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
 use Bigfoot\Bundle\NavigationBundle\Form\DataTransformer\ItemToJsonTransformer;
+use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -36,7 +37,7 @@ class MenuType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text', array('required' => false))
+            ->add('name', TextType::class, array('required' => false))
             ->add(
                 'items',
                 HiddenType::class,

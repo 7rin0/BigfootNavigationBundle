@@ -3,6 +3,7 @@
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Route;
 
 use BeSimple\I18nRoutingBundle\Routing\Router;
+use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -96,7 +97,7 @@ class ParameterType extends AbstractType
             foreach ($parameters as $key => $parameter) {
                 $builder->add(
                     $parameter,
-                    'text',
+                    TextType::class,
                     array(
                         'required' => true,
                     )

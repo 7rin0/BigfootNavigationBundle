@@ -4,6 +4,7 @@ namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu;
 
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\AttributeRepository;
+use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -70,8 +71,8 @@ class ItemType extends AbstractType
         }
 
         $builder
-            ->add('name', 'text', array('required' => false))
-            ->add('label', 'text', array('required' => false))
+            ->add('name', TextType::class, array('required' => false))
+            ->add('label', TextType::class, array('required' => false))
             ->add('parent')
             ->add('link', 'bigfoot_link', array('required' => false))
 
@@ -111,7 +112,7 @@ class ItemType extends AbstractType
                 ))
 
             ->add('image', 'bigfoot_media', array('required' => false))
-            ->add('description', 'text', array('required' => false))
+            ->add('description', TextType::class, array('required' => false))
             ->add('translation', 'translatable_entity');
 
         $builder->addEventListener(

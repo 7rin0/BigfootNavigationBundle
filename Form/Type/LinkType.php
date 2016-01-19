@@ -3,6 +3,7 @@
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
 use BeSimple\I18nRoutingBundle\Routing\Router;
+use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -93,7 +94,7 @@ class LinkType extends AbstractType
 
                 $form->add(
                     'externalLink',
-                    'text',
+                    TextType::class,
                     array(
                         'data'     => $externalLink,
                         'required' => false,
