@@ -5,6 +5,7 @@ namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Route;
 use BeSimple\I18nRoutingBundle\Routing\Router;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -83,7 +84,7 @@ class ParameterType extends AbstractType
             foreach ($entities as $key => $entity) {
                 $builder->add(
                     $key,
-                    'choice',
+                    ChoiceType::class,
                     array(
                         'choices' => $this->getEntities($entity, $routeOptions),
                     )

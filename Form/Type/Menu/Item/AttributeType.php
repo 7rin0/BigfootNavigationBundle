@@ -4,6 +4,7 @@ namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\Item;
 
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,7 +19,7 @@ class AttributeType extends AbstractType
         $builder
             ->add(
                 'type',
-                'choice',
+                ChoiceType::class,
                 array(
                     'choices'     => Attribute::$types,
                     'multiple'    => false,

@@ -4,6 +4,7 @@ namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
 use BeSimple\I18nRoutingBundle\Routing\Router;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -76,7 +77,7 @@ class LinkType extends AbstractType
 
                 $form->add(
                     'name',
-                    'choice',
+                    ChoiceType::class,
                     array(
                         'data'        => $name,
                         'empty_value' => 'Choose a link',
