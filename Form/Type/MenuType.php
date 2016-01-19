@@ -5,6 +5,7 @@ namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 use Bigfoot\Bundle\NavigationBundle\Form\DataTransformer\ItemToJsonTransformer;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -38,7 +39,7 @@ class MenuType extends AbstractType
             ->add('name', 'text', array('required' => false))
             ->add(
                 'items',
-                'hidden',
+                HiddenType::class,
                 array(
                     'attr' => array('class' => 'treeView'),
                 )
