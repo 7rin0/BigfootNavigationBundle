@@ -4,6 +4,7 @@ namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu;
 
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\AttributeRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
@@ -62,7 +63,7 @@ class ItemType extends AbstractType
             $builder
                 ->add(
                     'menu',
-                    'entity',
+                    EntityType::class,
                     array(
                         'class'         => 'Bigfoot\Bundle\NavigationBundle\Entity\Menu',
                         'contextualize' => true
@@ -78,7 +79,7 @@ class ItemType extends AbstractType
 
 //            ->add('attributes', null, array('required' => false))
 
-            ->add('childAttributes', 'entity', array(
+            ->add('childAttributes', EntityType::class, array(
                     'class' => 'BigfootNavigationBundle:Menu\Item\Attribute',
                     'query_builder' => function(AttributeRepository $er) {
                             return $er->createQueryBuilder('u')
@@ -89,7 +90,7 @@ class ItemType extends AbstractType
                     'required' => false
                 ))
 
-            ->add('elementAttributes', 'entity', array(
+            ->add('elementAttributes', EntityType::class, array(
                     'class' => 'BigfootNavigationBundle:Menu\Item\Attribute',
                     'query_builder' => function(AttributeRepository $er) {
                             return $er->createQueryBuilder('u')
@@ -100,7 +101,7 @@ class ItemType extends AbstractType
                     'required' => false
                 ))
 
-            ->add('linkAttributes', 'entity', array(
+            ->add('linkAttributes', EntityType::class, array(
                     'class' => 'BigfootNavigationBundle:Menu\Item\Attribute',
                     'query_builder' => function(AttributeRepository $er) {
                             return $er->createQueryBuilder('u')
