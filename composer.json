@@ -8,6 +8,10 @@
         {
             "name": "Guillaume Manen",
             "email": "g.manen@c2is.fr"
+        },
+        {
+          "name": "Luis SEVERINO",
+          "email": "lfs.severino@gmail.com"
         }
     ],
     "require": {
@@ -21,8 +25,6 @@
     "extra": {
         "branch-alias": {
             "dev-master": "4.0.x-dev",
-            "dev-2.2": "2.2.x-dev",
-            "dev-3.0": "3.0.x-dev"
         }
     }
 }
