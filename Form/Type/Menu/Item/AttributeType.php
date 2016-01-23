@@ -2,6 +2,7 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\Item;
 
+use Bigfoot\Bundle\CoreBundle\Form\Type\TranslatedEntityType;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
@@ -31,7 +32,7 @@ class AttributeType extends AbstractType
             ->add('name', TextType::class, array('required' => false))
             ->add('value', TextType::class, array('required' => false))
             ->add('label', TextType::class, array('required' => false))
-            ->add('translation', 'translatable_entity');
+            ->add('translation', TranslatedEntityType::class);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu;
 
+use Bigfoot\Bundle\CoreBundle\Form\Type\TranslatedEntityType;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\AttributeRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -114,7 +115,7 @@ class ItemType extends AbstractType
 
             ->add('image', 'bigfoot_media', array('required' => false))
             ->add('description', TextType::class, array('required' => false))
-            ->add('translation', 'translatable_entity');
+            ->add('translation', TranslatedEntityType::class);
 
         $builder->addEventListener(
             FormEvents::POST_SUBMIT,

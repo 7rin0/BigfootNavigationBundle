@@ -2,6 +2,7 @@
 
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
+use Bigfoot\Bundle\CoreBundle\Form\Type\TranslatedEntityType;
 use Bigfoot\Bundle\NavigationBundle\Form\DataTransformer\ItemToJsonTransformer;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\ORM\EntityManager;
@@ -45,7 +46,7 @@ class MenuType extends AbstractType
                     'attr' => array('class' => 'treeView'),
                 )
             )
-            ->add('translation', 'translatable_entity');
+            ->add('translation', TranslatedEntityType::class);
 
         $builder
             ->get('items')
