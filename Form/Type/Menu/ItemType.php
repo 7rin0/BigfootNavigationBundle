@@ -3,6 +3,7 @@
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type\Menu;
 
 use Bigfoot\Bundle\CoreBundle\Form\Type\TranslatedEntityType;
+use Bigfoot\Bundle\MediaBundle\Form\Type\BigfootMediaType;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\AttributeRepository;
 use Doctrine\ORM\EntityManager;
@@ -113,7 +114,7 @@ class ItemType extends AbstractType
                     'required' => false
                 ))
 
-            ->add('image', 'bigfoot_media', array('required' => false))
+            ->add('image', BigfootMediaType::class, array('required' => false))
             ->add('description', TextType::class, array('required' => false))
             ->add('translation', TranslatedEntityType::class);
 
