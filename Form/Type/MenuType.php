@@ -4,10 +4,10 @@ namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
 use Bigfoot\Bundle\CoreBundle\Form\Type\TranslatedEntityType;
 use Bigfoot\Bundle\NavigationBundle\Form\DataTransformer\ItemToJsonTransformer;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
