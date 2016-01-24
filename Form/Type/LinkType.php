@@ -82,7 +82,7 @@ class LinkType extends AbstractType
                     ChoiceType::class,
                     array(
                         'data'        => $name,
-                        'empty_value' => 'Choose a link',
+                        'empty_data' => 'Choose a link',
                         'choices'     => $nRoutes,
                         'required'    => false,
                         'attr'        => array(
@@ -129,13 +129,5 @@ class LinkType extends AbstractType
                     $formModifier($event->getForm(), $data['name']);
                 }
             });
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return 'bigfoot_link';
     }
 }

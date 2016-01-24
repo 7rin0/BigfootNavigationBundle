@@ -57,7 +57,7 @@ class AttributeController extends CrudController
      */
     public function indexAction()
     {
-        return $this->doIndex($this->getRequestStack());
+        return $this->doIndex();
     }
 
     /**
@@ -67,7 +67,7 @@ class AttributeController extends CrudController
      */
     public function newAction()
     {
-        return $this->doNew($this->getRequestStack());
+        return $this->doNew();
     }
 
     /**
@@ -77,7 +77,7 @@ class AttributeController extends CrudController
      */
     public function editAction($id)
     {
-        return $this->doEdit($this->getRequestStack(), $id);
+        return $this->doEdit($id);
     }
 
     /**
@@ -87,6 +87,6 @@ class AttributeController extends CrudController
      */
     public function deleteAction($id)
     {
-        return $this->doDelete($this->getRequestStack(), $id);
+        return $this->doDelete($id);
     }
 }

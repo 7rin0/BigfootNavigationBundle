@@ -6,6 +6,7 @@ use Bigfoot\Bundle\CoreBundle\Form\Type\TranslatedEntityType;
 use Bigfoot\Bundle\MediaBundle\Form\Type\BigfootMediaType;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Attribute;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\AttributeRepository;
+use Bigfoot\Bundle\NavigationBundle\Form\Type\LinkType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -68,7 +69,7 @@ class ItemType extends AbstractType
                     EntityType::class,
                     array(
                         'class'         => 'Bigfoot\Bundle\NavigationBundle\Entity\Menu',
-                        'contextualize' => true
+                        // TODO 'contextualize' => true
                     )
                 );
         }
@@ -77,7 +78,7 @@ class ItemType extends AbstractType
             ->add('name', TextType::class, array('required' => false))
             ->add('label', TextType::class, array('required' => false))
             ->add('parent')
-            ->add('link', 'bigfoot_link', array('required' => false))
+            ->add('link', LinkType::class, array('required' => false))
 
 //            ->add('attributes', null, array('required' => false))
 

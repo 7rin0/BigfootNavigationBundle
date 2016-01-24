@@ -25,7 +25,7 @@ class AttributeType extends AbstractType
                 array(
                     'choices'     => Attribute::$types,
                     'multiple'    => false,
-                    'empty_value' => 'Choose a type',
+                    'empty_data' => 'Choose a type',
                     'required'    => true,
                 )
             )
