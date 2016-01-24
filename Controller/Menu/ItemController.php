@@ -5,6 +5,7 @@ namespace Bigfoot\Bundle\NavigationBundle\Controller\Menu;
 use Bigfoot\Bundle\CoreBundle\Controller\CrudController;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item;
 use Bigfoot\Bundle\NavigationBundle\Entity\Menu\Item\Parameter as ItemParameter;
+use Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\ItemType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -53,7 +54,7 @@ class ItemController extends CrudController
 
     protected function getFormType()
     {
-        return 'bigfoot_menu_item';
+        return ItemType::class;
     }
 
     public function getFormTemplate()

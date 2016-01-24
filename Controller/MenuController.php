@@ -3,6 +3,7 @@
 namespace Bigfoot\Bundle\NavigationBundle\Controller;
 
 use Bigfoot\Bundle\CoreBundle\Controller\CrudController;
+use Bigfoot\Bundle\NavigationBundle\Form\Type\MenuType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -45,7 +46,7 @@ class MenuController extends CrudController
 
     protected function getFormType()
     {
-        return 'bigfoot_menu';
+        return MenuType::class;
     }
 
     public function getFormTemplate()

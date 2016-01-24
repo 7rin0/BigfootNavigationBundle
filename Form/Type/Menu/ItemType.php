@@ -146,12 +146,4 @@ class ItemType extends AbstractType
             )
         );
     }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return 'bigfoot_menu_item';
-    }
 }
