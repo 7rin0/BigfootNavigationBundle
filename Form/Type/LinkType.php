@@ -3,6 +3,7 @@
 namespace Bigfoot\Bundle\NavigationBundle\Form\Type;
 
 use BeSimple\I18nRoutingBundle\Routing\Router;
+use Bigfoot\Bundle\NavigationBundle\Form\Type\Route\ParameterType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -56,7 +57,7 @@ class LinkType extends AbstractType
             if ($link) {
                 $form->add(
                     'parameters',
-                    'bigfoot_route_parameter',
+                    ParameterType::class,
                     array(
                         'link' => $link,
                     )

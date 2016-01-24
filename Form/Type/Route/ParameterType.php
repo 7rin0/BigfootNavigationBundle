@@ -128,12 +128,4 @@ class ParameterType extends AbstractType
             )
         );
     }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return 'bigfoot_route_parameter';
-    }
 }
