@@ -25,13 +25,9 @@ class ItemToJsonTransformer implements DataTransformerInterface
     }
 
     /**
-     * Transforms a value from the original representation to a transformed representation.
+     * @param mixed $items
      *
-     * @param mixed $value The value in the original representation
-     *
-     * @return mixed The value in the transformed representation
-     *
-     * @throws TransformationFailedException When the transformation fails.
+     * @return string
      */
     public function transform($items)
     {
@@ -78,11 +74,9 @@ class ItemToJsonTransformer implements DataTransformerInterface
      * Transforms a value from the transformed representation to its original
      * representation.
      *
-     * @param mixed $value The value in the transformed representation
+     * @param mixed $json
      *
-     * @return mixed The value in the original representation
-     *
-     * @throws TransformationFailedException When the transformation fails.
+     * @return ArrayCollection|null
      */
     public function reverseTransform($json)
     {
@@ -97,6 +91,11 @@ class ItemToJsonTransformer implements DataTransformerInterface
         return $toReturn;
     }
 
+    /**
+     * @param      $items
+     * @param      $collection
+     * @param null $parent
+     */
     public function recursiveReverseTransform($items, $collection, $parent = null)
     {
         $repository = $this->entityManager->getRepository('BigfootNavigationBundle:Menu\Item');
