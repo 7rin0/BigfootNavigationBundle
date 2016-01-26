@@ -1,5 +1,5 @@
 bigfoot_navigation:
-    resource: "@BigfootNavigationBundle/Controller/"
+    resource: '@BigfootNavigationBundle/Controller/'
     type:     annotation
     prefix:   /admin
     schemes: [ %bigfoot.scheme% ]
