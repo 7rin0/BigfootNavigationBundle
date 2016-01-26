@@ -6,7 +6,7 @@ services:
         arguments:
             - '@doctrine.orm.default_entity_manager'
             - '@router.default'
-            - '@bigfoot_context'
+            - '@bigfoot_context.service.context'
 
     # Menu Subscriber
     bigfoot_navigation.subscriber.menu:
@@ -38,7 +38,7 @@ services:
     bigfoot_navigation.form.type.link:
         class: 'Bigfoot\Bundle\NavigationBundle\Form\Type\LinkType'
         arguments:
-            - '@router.default'
+            - '@router'
         tags:
             - { name: form.type }
 
@@ -71,7 +71,7 @@ services:
         class: 'Bigfoot\Bundle\NavigationBundle\Form\Type\Route\ParameterType'
         arguments:
             - '@doctrine.orm.default_entity_manager'
-            - '@router.default'
+            - '@router'
             - %locale%
         tags:
             - { name: form.type }
