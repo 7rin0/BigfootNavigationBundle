@@ -1,29 +1,16 @@
 services:
-    # Link Manager
-    ## NPH : To fix : such a class doesn't exist.
-#    bigfoot_navigation.manager.link:
-#        class: Bigfoot\Bundle\NavigationBundle\Manager\LinkManager
-#        arguments:
-#            - '@doctrine.orm.entity_manager'
-
-    # Menu Item Manager
-    ## NPH : To fix : such a class doesn't exist.
-#    bigfoot_navigation.manager.menu_item:
-#        class: Bigfoot\Bundle\NavigationBundle\Manager\Menu\ItemManager
-#        arguments:
-#            - '@doctrine.orm.entity_manager'
 
     # Menu Item Url Manager
     bigfoot_navigation.manager.menu_item_url:
-        class: Bigfoot\Bundle\NavigationBundle\Manager\Menu\Item\UrlManager
+        class: 'Bigfoot\Bundle\NavigationBundle\Manager\Menu\Item\UrlManager'
         arguments:
-            - '@doctrine.orm.entity_manager'
+            - '@doctrine.orm.default_entity_manager'
             - '@router'
             - '@bigfoot_context'
 
     # Menu Subscriber
     bigfoot_navigation.subscriber.menu:
-        class: Bigfoot\Bundle\NavigationBundle\Subscriber\MenuSubscriber
+        class: 'Bigfoot\Bundle\NavigationBundle\Subscriber\MenuSubscriber'
         arguments:
             - '@security.token_storage'
         tags:
@@ -31,7 +18,7 @@ services:
 
     # Menu Extension
     bigfoot_navigation.twig.extension.menu:
-        class: Bigfoot\Bundle\NavigationBundle\Twig\Extension\MenuExtension
+        class: 'Bigfoot\Bundle\NavigationBundle\Twig\Extension\MenuExtension'
         arguments:
             - '@knp_menu.helper'
             - '@knp_menu.matcher'
@@ -41,7 +28,7 @@ services:
 
     # Link Extension
     bigfoot_navigation.twig.extension.link:
-        class: Bigfoot\Bundle\NavigationBundle\Twig\Extension\LinkExtension
+        class: 'Bigfoot\Bundle\NavigationBundle\Twig\Extension\LinkExtension'
         arguments:
             - '@bigfoot_navigation.manager.menu_item_url'
         tags:
@@ -49,7 +36,7 @@ services:
 
     # Link Type
     bigfoot_navigation.form.type.link:
-        class: Bigfoot\Bundle\NavigationBundle\Form\Type\LinkType
+        class: 'Bigfoot\Bundle\NavigationBundle\Form\Type\LinkType'
         arguments:
             - '@router'
         tags:
@@ -57,42 +44,33 @@ services:
 
     # Menu Type
     bigfoot_navigation.form.type.menu:
-        class: Bigfoot\Bundle\NavigationBundle\Form\Type\MenuType
+        class: 'Bigfoot\Bundle\NavigationBundle\Form\Type\MenuType'
         arguments:
-            - '@doctrine.orm.entity_manager'
+            - '@doctrine.orm.default_entity_manager'
         tags:
             - { name: form.type }
 
     # Menu Item Type
     bigfoot_navigation.form.type.menu_item:
-        class: Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\ItemType
+        class: 'Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\ItemType'
         arguments:
-            - '@doctrine.orm.entity_manager'
+            - '@doctrine.orm.default_entity_manager'
         calls:
             - [setRequestStack, ['@?request_stack=']]
         tags:
             - { name: form.type }
 
-    # Menu Item Parameter Type
-    ## NPH : To fix : such a class doesn't exist.
-#    bigfoot_navigation.form.type.menu_item_parameter:
-#        class: Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\Item\ParameterType
-#        arguments:
-#            - '@doctrine.orm.entity_manager'
-#        tags:
-#            - { name: form.type }
-
     # Menu Item Attribute Type
     bigfoot_navigation.form.type.menu_item_attribute:
-        class: Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\Item\AttributeType
+        class: 'Bigfoot\Bundle\NavigationBundle\Form\Type\Menu\Item\AttributeType'
         tags:
             - { name: form.type }
 
     # Route Parameter Type
     bigfoot_navigation.form.type.route_parameter:
-        class: Bigfoot\Bundle\NavigationBundle\Form\Type\Route\ParameterType
+        class: 'Bigfoot\Bundle\NavigationBundle\Form\Type\Route\ParameterType'
         arguments:
-            - '@doctrine.orm.entity_manager'
+            - '@doctrine.orm.default_entity_manager'
             - '@router'
             - %locale%
         tags:
